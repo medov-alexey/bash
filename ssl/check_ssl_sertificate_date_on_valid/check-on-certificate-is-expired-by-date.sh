@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# This script check domain name ssl certificate and send message to Telegram chat if ssl certificate not valid
+# This script checks the SSL certificate of a domain name for expiration by date, and sends a message to the telegram channel if the SSL certificate is expired by date
 
 # for use need that in operation system has utilities:
 # bash, echo, date, grep, awk, curl, nmap, nmap-scripts
 
 # example how to run:
-# ./ssl-check.sh google.com
+# ./check-on-certificate-is-expired-by-date.sh google.com
 
 #-------------------
 
@@ -21,7 +21,6 @@ if [ "$(date --help > /dev/null 2>&1; echo $?)" -ne "0" ]; then echo; echo "To u
 if [ "$(grep --help > /dev/null 2>&1; echo $?)" -ne "0" ]; then echo; echo "To use this application, you need to have GREP installed on the system (example: apt-get install grep)"; echo; exit 127; fi
 
 if [ "$(curl --version > /dev/null 2>&1; echo $?)" -ne "0" ]; then echo; echo "To use this application, you need to have CURL installed on the system (example: apt-get install curl)"; echo; exit 127; fi
-
 
 if [ "$#" -lt 1 ]; then
     echo "No set domain name !"
