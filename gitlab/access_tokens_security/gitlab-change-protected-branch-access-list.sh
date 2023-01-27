@@ -1,3 +1,5 @@
+# To learn more on https://docs.gitlab.com/ee/api/protected_branches.html
+
 # ENGLISH:
 #
 # This script runs through the GitLab repositories listed below and puts in each of them, where the protected branch is the master branch,
